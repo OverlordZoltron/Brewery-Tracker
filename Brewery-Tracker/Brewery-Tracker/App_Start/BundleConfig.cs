@@ -24,7 +24,7 @@ namespace Brewery_Tracker
                       "~/Scripts/respond.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
-                      "~/Content/bulma.css",
+                      "~/Content/bulma.min.css",
                       "~/Content/main.css"));
 
             bundles.Add(new ScriptBundle("~/Scripts/js").Include(
