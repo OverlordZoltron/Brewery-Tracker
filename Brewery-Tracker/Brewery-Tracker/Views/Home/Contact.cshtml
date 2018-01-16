@@ -1,6 +1,78 @@
 ﻿@{
     ViewBag.Title = "Contact";
 }
-<h2 class="title is-2">@ViewBag.Title.</h2>
-<h3 class="title is-3">@ViewBag.Message</h3>
 
+<section class="hero is-dark">
+    <div class="hero-body">
+        <div class="container">
+            <h1 class="title name-font brand">
+                Contact Us
+            </h1>
+            <h2 class="subtitle">
+                Have a question? Want your brewery added to our database? Reach out!
+            </h2>
+        </div>
+    </div>
+</section>
+
+
+<!-- Contact Section -->
+<section class="section contact-section" id="contactsection">
+    <div class="container">
+        <!-- Form Column -->
+        <div class="columns">
+            <div class="column is-10 is-offset-1">
+                <form id="contact-form" action="//formspree.io/ian_arsenault@protonmail.com" method="post">
+                    <div class="columns is-multiline">
+                        <div class="column is-4">
+                            <div class="field">
+                                <label class="label">Name</label>
+                                <p class="control">
+                                    <input class="input" type="text" name="name" placeholder="Enter name" required>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="column is-4">
+                            <div class="field">
+                                <label class="label">Email</label>
+                                <p class="control">
+                                    <input class="input" type="email" name="email" placeholder="Enter email address"
+                                           required>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="column is-4">
+                            <div class="field">
+                                <label class="label">Subject</label>
+                                <p class="control">
+                                    <input class="input" type="text" name="subject" placeholder="Subject " required>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="column is-12">
+                            <div class="field">
+                                <label class="label">Message</label>
+                                <p class="control">
+                                    <textarea class="textarea" name="message" placeholder="Your message goes here...."
+                                              required></textarea>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- CONFIG -->
+                    <input class="is-hidden" type="text" name="_gotcha">
+                    <input type="hidden" name="_subject" value="Subject">
+                    <input type="hidden" name="_cc" value="email@cc.com">
+                    <!-- /CONFIG -->
+                    <div class="field is-grouped">
+                        <p class="control">
+                            <input class="button submit-btn" type="submit" value="Submit">
+                        </p>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <!-- End Form Column-->
+    </div>
+</section>
+<!-- End Contact Section -->

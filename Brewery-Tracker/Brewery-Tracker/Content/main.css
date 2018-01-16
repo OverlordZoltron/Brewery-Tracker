@@ -1,4 +1,12 @@
-﻿
+﻿.name-font {
+    font-family: 'Shadows Into Light', cursive;
+}
+
+.brand {
+    font-weight: 900;
+    font-size: 2rem;
+}
+
 .item-line:hover:before {
     content: '';
     position: absolute;
@@ -11,4 +19,15 @@
 
 .top-bot-space {
     margin: 4rem 0 8rem 0;
+}
+
+.hero.is-dark {
+    background: linear-gradient(
+            rgba(0, 0, 0, 0.5),
+            rgba(0, 0, 0, 0.88)
+    ), url('../Images/brewerywall.jpg') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
