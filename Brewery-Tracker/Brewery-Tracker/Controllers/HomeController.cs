@@ -40,5 +40,19 @@ namespace Brewery_Tracker.Controllers
 
             return View();
         }
+
+        public ActionResult Breweries()
+        {
+            ViewBag.Message = "Breweries Page -- Checkout some local breweries here!";
+
+            return View();
+        }
+
+        public ActionResult Beers()
+        {
+            ViewBag.Message = "Beers Page -- Checkout some local brewery beers here!";
+
+            return View();
+        }
     }
 }
