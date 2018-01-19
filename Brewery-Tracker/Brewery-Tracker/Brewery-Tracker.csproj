@@ -217,6 +217,7 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <None Include="Scripts\jquery-3.2.1.intellisense.js" />
+    <Content Include="Images\allagash-curieux.jpg" />
     <Content Include="Images\brewerywall.jpg" />
     <Content Include="Scripts\jquery-3.2.1.js" />
     <Content Include="Scripts\jquery-3.2.1.min.js" />
