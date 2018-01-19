@@ -31,3 +31,11 @@
     -o-background-size: cover;
     background-size: cover;
 }
+
+.alert-block {
+    z-index: 10000;
+    position: fixed;
+    right: 0;
+    border-radius: 0;
+}
+
