@@ -22,11 +22,21 @@
 <section class="beer-of-the-day">
     <div class="beer-of-the-day-body">
         <div class="container">
-            <div class="columns is-1 is-multiline">
-                <div class="column is-9 is-offset-2">
-                    <h1 class="title is-1">Beer of the Day @DateTime.Today.ToLongDateString()</h1>
+            <section class="hero is-light">
+                <div class="hero-body">
+                    <div class="container has-text-centered">
+                        <h1 class="title is-1">
+                            @DateTime.Today.DayOfWeek's Beer of the Day
+                        </h1>
+                    </div>
                 </div>
+            </section>
+            <div class="columns is-multiline">
+                @*<div class="column is-9 is-offset-2">
+                    <h1 class="title is-1">Beer of the Day @DateTime.Today.ToLongDateString()</h1>
+                </div>*@
                 <div class="column is-three-fifths is-offset-one-fifth">
+                  
                     <div class="card">
                         <div class="card-image">
                             <figure class="image is-4by3">
