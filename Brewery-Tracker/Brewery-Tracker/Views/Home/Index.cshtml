@@ -13,3 +13,61 @@
         </div>
     </div>
 </section>
+
+<div class="columns is-centered">
+    <div class="column is-three-quarters">
+
+        <nav class="level is-mobile top-bot-space">
+            <div class="level-item has-text-centered">
+                <div>
+                    <p class="heading">Users</p>
+                    <p class="title">
+                        @{ 
+                            Random random = new Random();
+                            int randomNumber = random.Next(120, 1245);
+                        }
+                        @randomNumber
+                    </p>
+                </div>
+            </div>
+            <div class="level-item has-text-centered">
+                <div>
+                    <p class="heading">Breweries</p>
+                    <p class="title">
+                        @{
+                            Random random2 = new Random();
+                            int numOfBreweries = random2.Next(20, 56);
+                        }
+                        @numOfBreweries
+                    </p>
+                </div>
+            </div>
+            <div class="level-item has-text-centered">
+                <div>
+                    <p class="heading">Beers</p>
+                    <p class="title">
+                        @{
+                            Random random3 = new Random();
+                            int randomBeer = random3.Next(60, 205);
+                        }
+                        @randomBeer
+                    </p>
+                </div>
+            </div>
+            <div class="level-item has-text-centered">
+                <div>
+                    <p class="heading">Likes</p>
+                    <p class="title">
+                        @{
+                            Random random4 = new Random();
+                            int randomLikeNumber = random4.Next(732, 1143);
+                        }
+                        @randomLikeNumber
+                    </p>
+                </div>
+            </div>
+        </nav>
+
+    </div>
+</div>
+
