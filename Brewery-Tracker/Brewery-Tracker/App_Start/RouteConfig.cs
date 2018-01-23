@@ -21,9 +21,9 @@ namespace Brewery_Tracker
 
             routes.MapRoute("Login", "Login", new { controller = "Home", action = "Login" });
 
-            routes.MapRoute("Breweries", "Breweries", new { controller = "Home", action = "Breweries" });
+            routes.MapRoute("Breweries", "Breweries", new { controller = "Home", action = "Breweries", id = UrlParameter.Optional });
 
-            routes.MapRoute("Beers", "Beers", new { controller = "Home", action = "Beers" });
+            routes.MapRoute("Beers", "Beers", new { controller = "Home", action = "Beers", id = UrlParameter.Optional });
 
             routes.MapRoute(
                 name: "Default",
