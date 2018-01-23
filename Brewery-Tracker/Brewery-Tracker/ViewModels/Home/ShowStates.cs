@@ -9,14 +9,5 @@ namespace Brewery_Tracker.ViewModels.Home
 {
     public class ShowStates
     {
-        public ShowLanguagesViewModel(CultureInfo[] cultures)
-        {
-            CulturesList = cultures.Select(c => new SelectListItem() { Text = c.EnglishName });
-        }
-        public IEnumerable<SelectListItem> CulturesList
-        {
-            get;
-            private set;
-        }
     }
 }
