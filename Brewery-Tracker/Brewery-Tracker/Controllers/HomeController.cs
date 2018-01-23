@@ -31,6 +31,19 @@ namespace Brewery_Tracker.Controllers
         {
             ViewBag.Message = "Sign up page";
 
+
+
+           List<string> StateList = new List<string>();
+            StateList.Add("Select One");
+            StateList.Add("Connecticut");
+            StateList.Add("Maine");
+            StateList.Add("Massachusetts");
+            StateList.Add("New Hampshire");
+            StateList.Add("Rhode Island");
+            StateList.Add("Vermont");
+
+            ViewBag.States = StateList;
+
             return View();
         }
 
