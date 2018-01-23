@@ -1,6 +1,7 @@
-﻿@{
+﻿@model Brewery_Tracker.ViewModels.Home.ShowStates
+@{
     Layout = "~/Views/Shared/_Layout.cshtml";
-  
+
 }
 
 <section class="hero is-dark">
@@ -111,11 +112,9 @@
                                 <div class="field has-addons has-addons-left">
                                     <div class="control is-expanded">
                                         <div class="select is-fullwidth">
-                                            @*'https://stackoverflow.com/questions/6333270/populate-html-dropdownlist-with-a-liststring-using-mv'c*@
+                 
+                                            @Html.DropDownList("states", Model.StateList.Select(c => new SelectListItem() { Text = c.ToString() }))
 
-                                            @Html.DropDownList("states", new SelectList(ViewBag.States, Model))
-                                          
-                              
                                         </div>
                                     </div>
                                     <div class="control">
