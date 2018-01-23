@@ -14,8 +14,6 @@ namespace Brewery_Tracker.ViewModels.Home
            StateList = GetStatesList();
         }
 
-        //public IEnumerable<SelectListItem> StateList { get; private set; }
-
         public IEnumerable<string> StateList { get; private set; }
 
 
