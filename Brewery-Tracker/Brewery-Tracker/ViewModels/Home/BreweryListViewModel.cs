@@ -10,7 +10,7 @@ namespace Brewery_Tracker.ViewModels.Home
     public class BreweryListViewModel
     { 
         // List of Breweries
-        public IEnumerable<SelectListItem> BreweryList { get; set; }
+        public IEnumerable<SelectListItem> BreweryList { get; private set; }
 
         // Brewery instance of Top Rated Brewery
         public Brewery TopRatedBrewery { get; set; }

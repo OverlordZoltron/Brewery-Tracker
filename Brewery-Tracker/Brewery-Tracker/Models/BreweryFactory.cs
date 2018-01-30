@@ -11,7 +11,7 @@ namespace Brewery_Tracker.Models
 
         public DbSet<Brewery> Breweries { get; set; } // Create a set of DB Entities that can work with Brewery instances in a table
 
-        public BreweryFactory()
+        public BreweryFactory() : base("name=DefaultConnection")
         {
             Database.SetInitializer(new BreweryInitializer());
         }
