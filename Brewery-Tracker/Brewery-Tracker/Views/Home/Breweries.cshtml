@@ -1,4 +1,4 @@
-﻿
+﻿@model Brewery_Tracker.ViewModels.Home.BreweryListViewModel
 @{
     ViewBag.Title = "Breweries";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -18,3 +18,24 @@
     </div>
 </section>
 
+
+<h2>All Breweries</h2>
+
+@Html.ListBox("breweryList", Model.BreweryList)
+
+
+<h2>Top Rated Brewery</h2>
+
+<dl>
+    <dt>ID</dt>
+    <dd>@Model.TopRatedBrewery.Brewery_ID</dd>
+
+    <dt>Name</dt>
+    <dd>@Model.TopRatedBrewery.Brewery_Name</dd>
+
+    <dt>State</dt>
+    <dd>@Model.TopRatedBrewery.Brewery_State</dd>
+
+    <dt>Rating</dt>
+    <dd>@Model.TopRatedBrewery.Brewery_Rating</dd>
+</dl>

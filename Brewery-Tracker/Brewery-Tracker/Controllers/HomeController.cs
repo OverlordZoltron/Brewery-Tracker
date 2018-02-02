@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Brewery_Tracker.Models;
+using Brewery_Tracker.ViewModels.Home;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -47,7 +49,13 @@ namespace Brewery_Tracker.Controllers
         {
             ViewBag.Message = "Breweries Page -- Checkout some local breweries here!";
 
-            return View();
+            // factory -> a new instance of the BreweryFactory model
+            var factory = new BreweryFactory();
+
+            //viewModel -> the viewModel filled with the breweries list
+            var viewModel = new BreweryListViewModel(factory.Breweries);
+
+            return View(viewModel);
         }
 
         public ActionResult Beers()
