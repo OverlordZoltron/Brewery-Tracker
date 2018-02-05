@@ -15,7 +15,6 @@ namespace Brewery_Tracker.ViewModels.Home
         // Brewery instance of Top Rated Brewery
         public Brewery TopRatedBrewery { get; set; }
 
-
         public BreweryListViewModel(IEnumerable<Brewery> breweries)
         {
             // Generating a list of Brewery Names

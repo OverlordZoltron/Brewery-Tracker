@@ -1,4 +1,5 @@
 ﻿@model Brewery_Tracker.ViewModels.Home.BreweryListViewModel
+
 @{
     ViewBag.Title = "Breweries";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -18,24 +19,61 @@
     </div>
 </section>
 
+<div class="container top-bot-space">
+    <div class="columns is-centered">
+        <div class="column">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        @*<th>Brewery</th>
+                        <th>State</th>
+                        <th>Rating</th>*@
+                    </tr>
+                </thead>
 
-<h2>All Breweries</h2>
+                <tbody>
+                    @foreach (var brewery in Model.BreweryList)
+                    {
+                        <tr>
+                            <td>@brewery.Brewery_ID</td>
+                            @*<td>@brewery.Brewery_Name</td>
+                            <td>@brewery.Brewery_State</td>
+                            <td>@brewery.Brewery_Rating</td>*@
+                        </tr>
+                    }
+                </tbody>
+            </table>
 
-@Html.ListBox("breweryList", Model.BreweryList)
+        </div>
+    </div>
+</div>
 
 
-<h2>Top Rated Brewery</h2>
+<div class="column">
+    <div class="column is-half">
+        @Html.ListBox("breweryList", Model.BreweryList)
+    </div>
+</div>
 
-<dl>
-    <dt>ID</dt>
-    <dd>@Model.TopRatedBrewery.Brewery_ID</dd>
+<div class="columns">
+    <div class="column">
+        <h2>Top Rated Brewery</h2>
 
-    <dt>Name</dt>
-    <dd>@Model.TopRatedBrewery.Brewery_Name</dd>
+        <dl>
+            <dt>ID</dt>
+            <dd>@Model.TopRatedBrewery.Brewery_ID</dd>
 
-    <dt>State</dt>
-    <dd>@Model.TopRatedBrewery.Brewery_State</dd>
+            <dt>Name</dt>
+            <dd>@Model.TopRatedBrewery.Brewery_Name</dd>
 
-    <dt>Rating</dt>
-    <dd>@Model.TopRatedBrewery.Brewery_Rating</dd>
-</dl>
+            <dt>State</dt>
+            <dd>@Model.TopRatedBrewery.Brewery_State</dd>
+
+            <dt>Rating</dt>
+            <dd>@Model.TopRatedBrewery.Brewery_Rating</dd>
+        </dl>
+
+    </div>
+</div>
+
