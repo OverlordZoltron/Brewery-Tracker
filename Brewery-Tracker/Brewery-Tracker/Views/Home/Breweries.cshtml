@@ -1,4 +1,5 @@
 ﻿@model Brewery_Tracker.ViewModels.Home.BreweryListViewModel
+
 @{
     ViewBag.Title = "Breweries";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -18,24 +19,34 @@
     </div>
 </section>
 
+<div class="top-bot-space">
+    <div class="columns is-centered">
+        <div class="column is-half">
+            <table class="table is-bordered is-narrow is-hoverable is-fullwidth">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Brewery</th>
+                        <th>City</th>
+                        <th>State</th>
+                        <th>Rating</th>
+                    </tr>
+                </thead>
 
-<h2>All Breweries</h2>
+                <tbody class="is-centered">
+                    @foreach (var brewery in Model.AllBreweries)
+                    {
+                        <tr>
+                            <td>@brewery.Brewery_ID</td>
+                            <td>@brewery.Brewery_Name</td>
+                            <td>@brewery.Brewery_City</td>
+                            <td>@brewery.Brewery_State</td>
+                            <td>@brewery.Brewery_Rating</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
 
-@Html.ListBox("breweryList", Model.BreweryList)
-
-
-<h2>Top Rated Brewery</h2>
-
-<dl>
-    <dt>ID</dt>
-    <dd>@Model.TopRatedBrewery.Brewery_ID</dd>
-
-    <dt>Name</dt>
-    <dd>@Model.TopRatedBrewery.Brewery_Name</dd>
-
-    <dt>State</dt>
-    <dd>@Model.TopRatedBrewery.Brewery_State</dd>
-
-    <dt>Rating</dt>
-    <dd>@Model.TopRatedBrewery.Brewery_Rating</dd>
-</dl>
+        </div>
+    </div>
+</div>

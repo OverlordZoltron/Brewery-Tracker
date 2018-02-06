@@ -15,6 +15,8 @@ namespace Brewery_Tracker.ViewModels.Home
         // Brewery instance of Top Rated Brewery
         public Brewery TopRatedBrewery { get; set; }
 
+        public List<Brewery> AllBreweries { get; set; }
+
 
         public BreweryListViewModel(IEnumerable<Brewery> breweries)
         {
@@ -23,6 +25,9 @@ namespace Brewery_Tracker.ViewModels.Home
 
             // Pointer to the top rated brewery
             TopRatedBrewery = breweries.OrderByDescending(c => c.Brewery_Rating).FirstOrDefault();
+
+            AllBreweries = breweries.OrderBy(c => c.Brewery_ID).ToList();
+
         }
 
     }
