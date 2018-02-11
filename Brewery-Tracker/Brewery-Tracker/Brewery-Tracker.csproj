@@ -196,21 +196,29 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\BeersController.cs" />
     <Compile Include="Controllers\BreweryController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\BeerFactory.cs" />
+    <Compile Include="Models\Beers.cs" />
     <Compile Include="Models\Brewery.cs" />
     <Compile Include="Models\BreweryFactory.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\UserFactory.cs" />
+    <Compile Include="Models\Users.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="ViewModels\Home\BeerListViewModel.cs" />
     <Compile Include="ViewModels\Home\BreweryListViewModel.cs" />
     <Compile Include="ViewModels\Home\ShowStates.cs" />
+    <Compile Include="ViewModels\Home\UserListViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bulma.min.css" />
@@ -265,10 +273,12 @@
     <Content Include="Views\Home\Login.cshtml" />
     <Content Include="Views\Home\Breweries.cshtml" />
     <Content Include="Views\Home\Beers.cshtml" />
+    <Content Include="Views\Brewery\Breweries.cshtml" />
+    <Content Include="Views\Beers\BeerList.cshtml" />
+    <Content Include="Views\User\UserList.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Brewery\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

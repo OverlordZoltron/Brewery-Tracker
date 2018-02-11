@@ -1,0 +1,99 @@
+﻿@model Brewery_Tracker.ViewModels.Home.BeerListViewModel
+
+@{
+    ViewBag.Title = "BeerList";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@*@Html.ListBox("beerList", Model.BeerList);*@
+
+
+<section class="hero is-dark">
+    <div class="hero-body">
+        <div class="container">
+            <h1 class="title name-font brand">
+                Beers
+            </h1>
+            <h2 class="subtitle">
+                Here is a list of beers you might find at a brewery!
+
+            </h2>
+        </div>
+    </div>
+</section>
+
+
+<div class="top-bot-space">
+    <div class="columns is-centered">
+        <div class="column is-half">
+            <table class="table is-bordered is-narrow is-hoverable is-fullwidth">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Beer</th>
+                        <th>Description</th>
+                        <th>Rating</th>
+                    </tr>
+                </thead>
+
+                <tbody class="is-centered">
+                    @foreach (var beer in Model.AllBeers)
+                    {
+                        <tr>
+                            <td>@beer.Beer_ID</td>
+                            <td>@beer.Beer_Name</td>
+                            <td>@beer.Beer_Description</td>
+                            <td>@beer.Beer_Rating</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+</div>
+
+
+
+<section class="beer-of-the-day">
+    <div class="beer-of-the-day-body">
+        <div class="container">
+            <section class="hero is-light">
+                <div class="hero-body">
+                    <div class="container has-text-centered">
+                        <h1 class="title is-1">
+                            @DateTime.Today.DayOfWeek's Beer of the Day
+                        </h1>
+                    </div>
+                </div>
+            </section>
+            <div class="columns is-multiline">
+                <div class="column is-three-fifths is-offset-one-fifth">
+                    <!--Comment for something-->
+                    <div class="card">
+                        <div class="card-image">
+                            <figure class="image is-4by3">
+                                <img src="../Images/allagash-curieux.jpg" alt="Beer of the Day Image">
+                            </figure>
+                        </div>
+                        <div class="card-content">
+                            <div class="media">
+                                <div class="media-content">
+                                    <p class="title is-6">Beer Name Here</p>
+                                </div>
+                            </div>
+
+                            <div class="content">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                Phasellus nec iaculis mauris.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+

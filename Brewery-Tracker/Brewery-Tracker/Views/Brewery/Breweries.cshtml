@@ -1,0 +1,53 @@
+﻿@model Brewery_Tracker.ViewModels.Home.BreweryListViewModel
+
+@{
+    ViewBag.Title = "Breweries";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<section class="hero is-dark">
+    <div class="hero-body">
+        <div class="container">
+            <h1 class="title name-font brand">
+                Breweries
+            </h1>
+            <h2 class="subtitle">
+                Check out this list of breweries, select which ones you've been to, and which ones are your favorites!
+
+            </h2>
+        </div>
+    </div>
+</section>
+
+<div class="top-bot-space">
+    <div class="columns is-centered">
+        <div class="column is-half">
+            <table class="table is-bordered is-narrow is-hoverable is-fullwidth">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Brewery</th>
+                        <th>City</th>
+                        <th>State</th>
+                        <th>Rating</th>
+                    </tr>
+                </thead>
+
+                <tbody class="is-centered">
+                    @foreach (var brewery in Model.AllBreweries)
+                    {
+                        <tr>
+                            <td>@brewery.Brewery_ID</td>
+                            <td>@brewery.Brewery_Name</td>
+                            <td>@brewery.Brewery_City</td>
+                            <td>@brewery.Brewery_State</td>
+                            <td>@brewery.Brewery_Rating</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+</div>
