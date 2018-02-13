@@ -1,0 +1,59 @@
+﻿@model List<Brewery_Tracker.Models.Beers>
+
+@{
+    ViewBag.Title = "ListOfBeers";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<section class="hero is-dark">
+    <div class="hero-body">
+        <div class="container">
+            <h1 class="title name-font brand">
+                Beers
+            </h1>
+            <h2 class="subtitle">
+                Here is a list of beers you might find at a brewery!
+
+            </h2>
+        </div>
+    </div>
+</section>
+
+
+<div class="top-bot-space">
+    <div class="columns is-centered">
+        <div class="column is-half">
+            @using (Html.BeginForm("ListOfBeers", "Beers"))
+            {
+                @Html.TextBox("searchCriteria")
+                <input type="submit" value="Find Beers" placeholder="Search By Name"/>
+            }
+            <table class="table is-bordered is-narrow is-hoverable is-fullwidth">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Beer</th>
+                        <th>Rating</th>
+                        <th>Details</th>
+                    </tr>
+                </thead>
+
+                <tbody class="is-centered">
+                    @foreach (var beer in Model)
+                    {
+                        <tr>
+                            <td>@beer.Beer_ID</td>
+                            <td>@beer.Beer_Name</td>
+                            <td>@beer.Beer_Rating</td>
+                            <td>
+                                @Html.ActionLink("Details", "Details", new { id = beer.Beer_ID }, new { @class = "button is-link" })
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+</div>

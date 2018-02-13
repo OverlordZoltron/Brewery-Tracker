@@ -286,6 +286,8 @@
     <Content Include="Views\BreweriesCRUD\Details.cshtml" />
     <Content Include="Views\BreweriesCRUD\Edit.cshtml" />
     <Content Include="Views\BreweriesCRUD\Index.cshtml" />
+    <Content Include="Views\Beers\ListOfBeers.cshtml" />
+    <Content Include="Views\Beers\Details.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
