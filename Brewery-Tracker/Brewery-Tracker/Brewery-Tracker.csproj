@@ -221,6 +221,10 @@
     <Compile Include="ViewModels\Home\UserListViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\Brewery-Tracker.mdf" />
+    <Content Include="App_Data\Brewery-Tracker_log.ldf">
+      <DependentUpon>Brewery-Tracker.mdf</DependentUpon>
+    </Content>
     <Content Include="Content\bulma.min.css" />
     <Content Include="Content\main.css" />
     <Content Include="favicon.ico" />
@@ -277,9 +281,7 @@
     <Content Include="Views\Beers\BeerList.cshtml" />
     <Content Include="Views\User\UserList.cshtml" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="App_Data\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
