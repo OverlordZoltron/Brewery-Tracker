@@ -197,6 +197,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\BeersController.cs" />
+    <Compile Include="Controllers\BreweriesCRUDController.cs" />
     <Compile Include="Controllers\BreweryController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -280,6 +281,11 @@
     <Content Include="Views\Brewery\Breweries.cshtml" />
     <Content Include="Views\Beers\BeerList.cshtml" />
     <Content Include="Views\User\UserList.cshtml" />
+    <Content Include="Views\BreweriesCRUD\Create.cshtml" />
+    <Content Include="Views\BreweriesCRUD\Delete.cshtml" />
+    <Content Include="Views\BreweriesCRUD\Details.cshtml" />
+    <Content Include="Views\BreweriesCRUD\Edit.cshtml" />
+    <Content Include="Views\BreweriesCRUD\Index.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
