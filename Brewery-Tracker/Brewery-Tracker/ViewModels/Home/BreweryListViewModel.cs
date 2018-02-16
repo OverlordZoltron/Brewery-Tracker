@@ -18,6 +18,7 @@ namespace Brewery_Tracker.ViewModels.Home
         public List<Brewery> AllBreweries { get; set; }
 
 
+        //ListViewModel
         public BreweryListViewModel(IEnumerable<Brewery> breweries)
         {
             // Generating a list of Brewery Names

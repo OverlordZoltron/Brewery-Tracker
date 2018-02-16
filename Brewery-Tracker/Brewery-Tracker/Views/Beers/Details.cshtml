@@ -1,0 +1,43 @@
+﻿@model Brewery_Tracker.Models.Beers
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Beers</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Beer_Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Beer_Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Beer_Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Beer_Description)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Beer_Rating)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Beer_Rating)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Beer_ID }) |
+    @Html.ActionLink("Back to List", "ListOfBeers")
+</p>

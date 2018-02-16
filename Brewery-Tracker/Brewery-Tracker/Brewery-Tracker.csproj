@@ -197,6 +197,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\BeersController.cs" />
+    <Compile Include="Controllers\BreweriesCRUDController.cs" />
     <Compile Include="Controllers\BreweryController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -221,6 +222,10 @@
     <Compile Include="ViewModels\Home\UserListViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\Brewery-Tracker.mdf" />
+    <Content Include="App_Data\Brewery-Tracker_log.ldf">
+      <DependentUpon>Brewery-Tracker.mdf</DependentUpon>
+    </Content>
     <Content Include="Content\bulma.min.css" />
     <Content Include="Content\main.css" />
     <Content Include="favicon.ico" />
@@ -276,10 +281,15 @@
     <Content Include="Views\Brewery\Breweries.cshtml" />
     <Content Include="Views\Beers\BeerList.cshtml" />
     <Content Include="Views\User\UserList.cshtml" />
+    <Content Include="Views\BreweriesCRUD\Create.cshtml" />
+    <Content Include="Views\BreweriesCRUD\Delete.cshtml" />
+    <Content Include="Views\BreweriesCRUD\Details.cshtml" />
+    <Content Include="Views\BreweriesCRUD\Edit.cshtml" />
+    <Content Include="Views\BreweriesCRUD\Index.cshtml" />
+    <Content Include="Views\Beers\ListOfBeers.cshtml" />
+    <Content Include="Views\Beers\Details.cshtml" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="App_Data\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />

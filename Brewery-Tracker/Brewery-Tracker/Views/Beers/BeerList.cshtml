@@ -1,4 +1,5 @@
-﻿@model Brewery_Tracker.ViewModels.Home.BeerListViewModel
+﻿
+@model Brewery_Tracker.ViewModels.Home.BeerListViewModel
 
 @{
     ViewBag.Title = "BeerList";
@@ -31,8 +32,8 @@
                     <tr>
                         <th>ID</th>
                         <th>Beer</th>
-                        <th>Description</th>
                         <th>Rating</th>
+                        <th>Details</th>
                     </tr>
                 </thead>
 
@@ -42,8 +43,12 @@
                         <tr>
                             <td>@beer.Beer_ID</td>
                             <td>@beer.Beer_Name</td>
-                            <td>@beer.Beer_Description</td>
                             <td>@beer.Beer_Rating</td>
+                            <td>
+                                <a class="button is-link">
+                                    Details
+                                </a>
+                            </td>
                         </tr>
                     }
                 </tbody>
@@ -94,6 +99,5 @@
         </div>
     </div>
 </section>
-
 
 
