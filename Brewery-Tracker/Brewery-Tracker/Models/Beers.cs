@@ -11,8 +11,12 @@ namespace Brewery_Tracker.Models
         [Key]
         public int Beer_ID { get; set; }
         // TODO ADD BREWERY ID
+        [Required]
+        [RegularExpression("..+", ErrorMessage = "Must be at least 2 characters long")]
         public string Beer_Name { get; set; }
+        [RegularExpression("..+", ErrorMessage = "Must be at least 2 characters long")]
         public string Beer_Description { get; set; }
+        [Range(0, 10)]
         public double Beer_Rating { get; set; }
 
         public string ImageName { get; set; }
