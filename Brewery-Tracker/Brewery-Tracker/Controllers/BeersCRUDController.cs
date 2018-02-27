@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using Brewery_Tracker.Models;
+using System.Web.Helpers;
 
 namespace Brewery_Tracker.Controllers
 {
@@ -122,6 +123,29 @@ namespace Brewery_Tracker.Controllers
                 db.Dispose();
             }
             base.Dispose(disposing);
+        }
+
+        public ActionResult Picture(int id)
+        {
+            // facory instance
+            var factory = new BeerFactory();
+
+            //find beer from DB based on the ID
+            var beer = factory.Beers.Where(p => p.Beer_ID == id).FirstOrDefault();
+
+            //if null (no match, get ou)
+            if (beer == null)
+            {
+                return HttpNotFound();
+            }
+
+            // else we found a match
+            // create an image object and resize it
+            var img = new WebImage(string.Format("~/Content/Images/{0}.jpg", beer.ImageName));
+            img.Resize(300, 300);
+
+            //return this image for use by other actions/methods
+            return File(img.GetBytes(), "image/jpeg");
         }
     }
 }

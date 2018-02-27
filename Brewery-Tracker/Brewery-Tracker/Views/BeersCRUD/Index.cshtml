@@ -19,10 +19,10 @@
             @Html.DisplayNameFor(model => model.Beer_Description)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Beer_Rating)
+            @Html.DisplayNameFor(model => model.ImageName)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.ImageName)
+            @Html.DisplayNameFor(model => model.Beer_Rating)
         </th>
         <th></th>
     </tr>
@@ -36,10 +36,10 @@
             @Html.DisplayFor(modelItem => item.Beer_Description)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Beer_Rating)
+            <img src='@Url.Action("Picture", new { id = item.Beer_ID})' />
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.ImageName)
+            @Html.DisplayFor(modelItem => item.Beer_Rating)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.Beer_ID }) |
