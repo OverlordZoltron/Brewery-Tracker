@@ -25,6 +25,7 @@ namespace Brewery_Tracker.Models
                 {
                     Beer_Name = "Rocky Point Red Ale",
                     Beer_Description = "Our Rocky Point Red Ale draws its name from the legendary Rhode Island amusement park, now reborn as a seaside nature preserve. Light caramel tones and honey malt mix with Citra and El Dorado hops to create a smooth and balanced flavor that will transport you to a summer day by the shore no matter what time of year.",
+                    ImageName = "RockyPointRedAle",
                     Beer_Rating = 10
                 });
 
@@ -32,6 +33,7 @@ namespace Brewery_Tracker.Models
                 {
                     Beer_Name = "Adelia",
                     Beer_Description = "Pale Ale began as a home brewers dream, and grew into an icon.",
+                    ImageName = "Adelia",
                     Beer_Rating = 8.5
                 });
 
@@ -39,6 +41,7 @@ namespace Brewery_Tracker.Models
                 {
                     Beer_Name = "The Chosen One DIPA",
                     Beer_Description = "You asked for it and we delivered. An American DIPA overflowing with hops and weighing in at a surprisingly subtle 8.5% ABV. This beer needs no introduction, just sit back, relax and enjoy. You have chosen wisely.",
+                    ImageName = "DIPA",
                     Beer_Rating = 9
                 });
 
@@ -46,6 +49,7 @@ namespace Brewery_Tracker.Models
                 {
                     Beer_Name = "BACKYAHD",
                     Beer_Description = "The ultimate suburban brew, Backyahd is an aggressively hopped American IPA with a tantalizing hop aroma. The beer’s bitterness pairs perfectly with spicy foods coming straight off the grill. Enjoy it with friends, family, or whomever you choose. After all, it’s your Backyahd.",
+                    ImageName = "backyahd",
                     Beer_Rating = 9.5
                 });
 
