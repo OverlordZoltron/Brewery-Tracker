@@ -14,5 +14,7 @@ namespace Brewery_Tracker.Models
         public string Beer_Name { get; set; }
         public string Beer_Description { get; set; }
         public double Beer_Rating { get; set; }
+
+        public string ImageName { get; set; }
     }
 }

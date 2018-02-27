@@ -37,7 +37,7 @@ namespace Brewery_Tracker.Models
 
                 context.Beers.Add(new Beers()
                 {
-                    Beer_Name = "The Chosen One DIPAr",
+                    Beer_Name = "The Chosen One DIPA",
                     Beer_Description = "You asked for it and we delivered. An American DIPA overflowing with hops and weighing in at a surprisingly subtle 8.5% ABV. This beer needs no introduction, just sit back, relax and enjoy. You have chosen wisely.",
                     Beer_Rating = 9
                 });
