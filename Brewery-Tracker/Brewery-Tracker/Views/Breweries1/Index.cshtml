@@ -1,0 +1,82 @@
+﻿@model IEnumerable<Brewery_Tracker.Models.Brewery>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<section class="hero is-dark">
+    <div class="hero-body">
+        <div class="container">
+            <h1 class="title name-font brand">
+                Breweries
+            </h1>
+            <h2 class="subtitle">
+                Check out this list of breweries, select which ones you've been to, and which ones are your favorites!
+
+            </h2>
+        </div>
+    </div>
+</section>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Brewery_Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Brewery_Description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Brewery_Address)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Brewery_City)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Brewery_State)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Brewery_Zip)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Brewery_Rating)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Brewery_Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Brewery_Description)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Brewery_Address)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Brewery_City)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Brewery_State)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Brewery_Zip)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Brewery_Rating)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Brewery_ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Brewery_ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Brewery_ID })
+        </td>
+    </tr>
+}
+
+</table>

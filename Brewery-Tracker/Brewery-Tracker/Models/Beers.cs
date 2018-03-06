@@ -20,5 +20,9 @@ namespace Brewery_Tracker.Models
         public double Beer_Rating { get; set; }
 
         public string ImageName { get; set; }
+
+        public int Brewery_ID { get; set; }
+        
+        public virtual Brewery Brewery { get; set; } // this will link to the associated Brewery Table
     }
 }

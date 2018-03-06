@@ -21,11 +21,11 @@ namespace Brewery_Tracker
 
             routes.MapRoute("Login", "Login", new { controller = "Home", action = "Login" });
 
-            routes.MapRoute("Breweries", "Breweries", new { controller = "Home", action = "Breweries", id = UrlParameter.Optional });
+            routes.MapRoute("Breweries", "Breweries", new { controller = "Breweries1", action = "Index", id = UrlParameter.Optional });
 
            // routes.MapRoute("Beers", "Beers", new { controller = "Home", action = "Beers", id = UrlParameter.Optional });
 
-            routes.MapRoute("Beers", "Beers", new { controller = "Beers", action = "BeerList", id = UrlParameter.Optional });
+            routes.MapRoute("Beers", "Beers", new { controller = "Beers1", action = "Index", id = UrlParameter.Optional });
 
             routes.MapRoute(
                 name: "Default",
