@@ -19,9 +19,12 @@
     </div>
 </section>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
+<section class="hero">
+    <div class="hero-body">
+        @Html.ActionLink("Create New", "Create", new object { }, new { @class = "button is-link" })
+    </div>
+</section>
+
 <table class="table">
     <tr>
         <th>

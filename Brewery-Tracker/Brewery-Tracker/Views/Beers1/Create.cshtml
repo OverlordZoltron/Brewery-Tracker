@@ -15,61 +15,101 @@
     </div>
 </section>
 
-@using (Html.BeginForm()) 
-{
-    @Html.AntiForgeryToken()
-    
-    <div class="form-horizontal">
-        <hr />
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        <div class="form-group">
-            @Html.LabelFor(model => model.Beer_Name, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Beer_Name, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Beer_Name, "", new { @class = "text-danger" })
+<div class="container">
+    <nav class="breadcrumb" aria-label="breadcrumbs">
+        <ul>
+            <li>@Html.ActionLink("Back to List", "Index")</li>
+            <li class="is-active"><a href="#" aria-current="page">Create New</a></li>
+        </ul>
+    </nav>
+</div>
+
+<div class="columns is-centered">
+    <div class="column is-4">
+
+
+        <div class="card top-bot-space">
+            <header class="card-header">
+                    <p class="card-header-title">
+                        Enter Beer Info
+                    </p>
+                </header>
+            <div class="card-content">
+                <div class="content">
+
+                    <!-- CREATE FORM-->
+
+
+
+                    @using (Html.BeginForm())
+                    {
+                        @Html.AntiForgeryToken()
+
+                        <div class="form-horizontal">
+                            @Html.ValidationSummary(true, "", new { @class = "help is-danger" })
+                            <div class="field">
+                                <label class="label">Beer Name</label>
+                                <div class="control">
+                                    @Html.EditorFor(model => model.Beer_Name, new { htmlAttributes = new { @class = "input" } })
+                                    @Html.ValidationMessageFor(model => model.Beer_Name, "", new { @class = "help is-danger" })
+                                </div>
+                            </div>
+
+                            <div class="field">
+                                <label class="label">Beer Description</label>
+                                <div class="control">
+                                    @Html.EditorFor(model => model.Beer_Description, new { htmlAttributes = new { @class = "input" } })
+                                    @Html.ValidationMessageFor(model => model.Beer_Description, "", new { @class = "help is-danger" })
+                                </div>
+                            </div>
+
+                            <div class="field">
+                                <label class="label">Beer Rating</label>
+                                <div class="control">
+                                    @Html.EditorFor(model => model.Beer_Rating, new { htmlAttributes = new { @class = "input" } })
+                                    @Html.ValidationMessageFor(model => model.Beer_Rating, "", new { @class = "help is-danger" })
+                                </div>
+                            </div>
+
+                            <div class="field">
+                                <label class="label">Image Name</label>
+                                <div class="control">
+                                    @Html.EditorFor(model => model.ImageName, new { htmlAttributes = new { @class = "input" } })
+                                    @Html.ValidationMessageFor(model => model.ImageName, "", new { @class = "help is-danger" })
+                                </div>
+                            </div>
+
+                            <div class="field">
+                                <label class="label">State</label>
+                                <div class="field has-addons has-addons-left">
+                                    <div class="control is-expanded">
+                                        <div class="select is-fullwidth">
+                                            @Html.DropDownList("Brewery_ID", null, htmlAttributes: new { @class = "form-control" })
+                                            @Html.ValidationMessageFor(model => model.Brewery_ID, "", new { @class = "help is-danger" })
+                                        </div>
+                                    </div>
+                                    <div class="control">
+                                        <a class="is-static button">Choose</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="field is-grouped is-grouped-centered">
+                                <p class="control">
+                                    <input type="submit" value="Create" class="button is-link" />
+                                </p>
+                             
+                            </div>
+  
+                        
+                        </div>
+                    }
+                  
+                    <!-- END CREATE FORM -->
+
+                </div>
             </div>
         </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.Beer_Description, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Beer_Description, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Beer_Description, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.Beer_Rating, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Beer_Rating, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Beer_Rating, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.ImageName, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.ImageName, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.ImageName, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.Brewery_ID, "Brewery_ID", htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.DropDownList("Brewery_ID", null, htmlAttributes: new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.Brewery_ID, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
-            </div>
-        </div>
     </div>
-}
-
-<div>
-    @Html.ActionLink("Back to List", "Index")
 </div>
