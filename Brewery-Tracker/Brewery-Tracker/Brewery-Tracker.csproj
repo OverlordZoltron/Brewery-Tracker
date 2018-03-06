@@ -196,8 +196,10 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\Beers1Controller.cs" />
     <Compile Include="Controllers\BeersController.cs" />
     <Compile Include="Controllers\BeersCRUDController.cs" />
+    <Compile Include="Controllers\Breweries1Controller.cs" />
     <Compile Include="Controllers\BreweriesCRUDController.cs" />
     <Compile Include="Controllers\BreweryController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -211,6 +213,7 @@
     <Compile Include="Models\Beers.cs" />
     <Compile Include="Models\Brewery.cs" />
     <Compile Include="Models\BreweryFactory.cs" />
+    <Compile Include="Models\Brewery_TrackContext.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\UserFactory.cs" />
@@ -294,6 +297,16 @@
     <Content Include="Views\BeersCRUD\Details.cshtml" />
     <Content Include="Views\BeersCRUD\Edit.cshtml" />
     <Content Include="Views\BeersCRUD\Index.cshtml" />
+    <Content Include="Views\Breweries1\Create.cshtml" />
+    <Content Include="Views\Breweries1\Delete.cshtml" />
+    <Content Include="Views\Breweries1\Details.cshtml" />
+    <Content Include="Views\Breweries1\Edit.cshtml" />
+    <Content Include="Views\Breweries1\Index.cshtml" />
+    <Content Include="Views\Beers1\Create.cshtml" />
+    <Content Include="Views\Beers1\Delete.cshtml" />
+    <Content Include="Views\Beers1\Details.cshtml" />
+    <Content Include="Views\Beers1\Edit.cshtml" />
+    <Content Include="Views\Beers1\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Content\Images\" />
