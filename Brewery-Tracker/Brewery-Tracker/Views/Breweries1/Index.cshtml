@@ -27,92 +27,38 @@
     </div>
 </section>
 
-<table class="table">
-    <tr>
-        <th>
-            Brewery Name
-        </th>
-        <th>
-            Brewery Description
-        </th>
-        <th>
-            Brewery Address
-        </th>
-        <th>
-            City
-        </th>
-        <th>
-            State
-        </th>
-        <th>
-            Zip
-        </th>
-        <th>
-            Rating
-        </th>
-        <th></th>
-    </tr>
-
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Brewery_Name)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Brewery_Description)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Brewery_Address)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Brewery_City)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Brewery_State)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Brewery_Zip)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Brewery_Rating)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Brewery_ID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Brewery_ID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Brewery_ID })
-        </td>
-    </tr>
-}
-
-</table>
-
-
-<div class="columns">
+<div class="columns is-centered">
     <div class="column is-4">
-        <div class="card">
-            <header class="card-header">
-                <p class="card-header-title">
-                    Component
-                </p>
-                <a href="#" class="card-header-icon" aria-label="more options">
-                    <span class="icon">
-                        <i class="fas fa-angle-down" aria-hidden="true"></i>
-                    </span>
-                </a>
-            </header>
-            <div class="card-content">
-                <div class="content">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis mauris.
-                    <a href="#">adsf<a>. <a href="#">#css</a> <a href="#">#responsive</a>
-                    <br>
-                    <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
+        @foreach (var item in Model)
+        {
+            <div class="card">
+                <header class="card-header">
+                    <p class="card-header-title">
+                        @Html.DisplayFor(modelItem => item.Brewery_Name)
+                    </p>
+                </header>
+                <div class="card-content">
+                    <div class="content">
+                        <div class="title is-4">Rating: <span class="rating">@Html.DisplayFor(modelItem => item.Brewery_Rating)</span></div>
+                    </div>
+                    <div class="content">
+                        <div class="title is-4">Description:</div>
+                        @Html.DisplayFor(modelItem => item.Brewery_Description)
+                    </div>
+                    <div class="content">
+                        <div class="title is-4">Location:</div>
+                        @Html.DisplayFor(modelItem => item.Brewery_Address)
+               
+                        @Html.DisplayFor(modelItem => item.Brewery_City), @Html.DisplayFor(modelItem => item.Brewery_State) @Html.DisplayFor(modelItem => item.Brewery_Zip)
+                    </div>
                 </div>
+                <footer class="card-footer">
+                    @Html.ActionLink("Edit", "Edit", new { id = item.Brewery_ID }, new { @class = "card-footer-item" })
+                    @Html.ActionLink("Details", "Details", new { id = item.Brewery_ID }, new { @class = "card-footer-item" })
+                    @Html.ActionLink("Delete", "Delete", new { id = item.Brewery_ID }, new { @class = "card-footer-item" })
+                </footer>
             </div>
-            <footer class="card-footer">
-                <a href="#" class="card-footer-item">Save</a>
-                <a href="#" class="card-footer-item">Edit</a>
-                <a href="#" class="card-footer-item">Delete</a>
-            </footer>
-        </div>
+        }
+       
     </div>
 </div>
