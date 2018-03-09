@@ -21,32 +21,34 @@
 
 <section class="hero">
     <div class="hero-body">
-        @Html.ActionLink("Create New", "Create", new object { }, new { @class = "button is-link" })
+        <div class="has-text-centered">
+            @Html.ActionLink("Create New", "Create", new object { }, new { @class = "button is-link" })
+        </div>
     </div>
 </section>
 
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Brewery_Name)
+            Brewery Name
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Brewery_Description)
+            Brewery Description
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Brewery_Address)
+            Brewery Address
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Brewery_City)
+            City
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Brewery_State)
+            State
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Brewery_Zip)
+            Zip
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Brewery_Rating)
+            Rating
         </th>
         <th></th>
     </tr>
@@ -83,3 +85,34 @@
 }
 
 </table>
+
+
+<div class="columns">
+    <div class="column is-4">
+        <div class="card">
+            <header class="card-header">
+                <p class="card-header-title">
+                    Component
+                </p>
+                <a href="#" class="card-header-icon" aria-label="more options">
+                    <span class="icon">
+                        <i class="fas fa-angle-down" aria-hidden="true"></i>
+                    </span>
+                </a>
+            </header>
+            <div class="card-content">
+                <div class="content">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis mauris.
+                    <a href="#">adsf<a>. <a href="#">#css</a> <a href="#">#responsive</a>
+                    <br>
+                    <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
+                </div>
+            </div>
+            <footer class="card-footer">
+                <a href="#" class="card-footer-item">Save</a>
+                <a href="#" class="card-footer-item">Edit</a>
+                <a href="#" class="card-footer-item">Delete</a>
+            </footer>
+        </div>
+    </div>
+</div>
