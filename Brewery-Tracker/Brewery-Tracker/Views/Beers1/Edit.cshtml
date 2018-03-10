@@ -4,67 +4,113 @@
     ViewBag.Title = "Edit";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
-<h2>Edit</h2>
-
-@using (Html.BeginForm())
-{
-    @Html.AntiForgeryToken()
-    
-    <div class="form-horizontal">
-        <h4>Beers</h4>
-        <hr />
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        @Html.HiddenFor(model => model.Beer_ID)
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.Beer_Name, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Beer_Name, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Beer_Name, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.Beer_Description, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Beer_Description, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Beer_Description, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.Beer_Rating, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Beer_Rating, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Beer_Rating, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.ImageName, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.ImageName, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.ImageName, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.Brewery_ID, "Brewery_ID", htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.DropDownList("Brewery_ID", null, htmlAttributes: new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.Brewery_ID, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Save" class="btn btn-default" />
-            </div>
+<section class="hero is-dark">
+    <div class="hero-body">
+        <div class="container">
+            <h1 class="title name-font brand">
+                Edit @Html.DisplayFor(model => model.Beer_Name) Details
+            </h1>
         </div>
     </div>
-}
+</section>
 
-<div>
-    @Html.ActionLink("Back to List", "Index")
+<div class="container">
+    <nav class="breadcrumb" aria-label="breadcrumbs">
+        <ul>
+            <li>@Html.ActionLink("Back to List", "Index")</li>
+            <li class="is-active"><a href="#" aria-current="page">Edit</a></li>
+        </ul>
+    </nav>
+</div>
+
+<div class="columns is-centered">
+    <div class="column is-4">
+
+
+        <div class="card top-bot-space">
+            <header class="card-header">
+                <p class="card-header-title">
+                    Enter Beer Information
+                </p>
+            </header>
+            <div class="card-content">
+                <div class="content">
+
+                    <!-- EDIT FORM-->
+
+
+
+                    @using (Html.BeginForm())
+                    {
+                        @Html.AntiForgeryToken()
+
+                        <div class="form-horizontal">
+                            @Html.ValidationSummary(true, "", new { @class = "help is-danger" })
+                            @Html.HiddenFor(model => model.Beer_ID)
+
+                            <div class="field">
+                                <label class="label">Beer Name</label>
+                                <div class="control">
+                                    @Html.EditorFor(model => model.Beer_Name, new { htmlAttributes = new { @class = "input" } })
+                                    @Html.ValidationMessageFor(model => model.Beer_Name, "", new { @class = "help is-danger" })
+                                </div>
+                            </div>
+
+                            <div class="field">
+                                <label class="label">Beer Description</label>
+                                <div class="control">
+                                    @Html.EditorFor(model => model.Beer_Description, new { htmlAttributes = new { @class = "input" } })
+                                    @Html.ValidationMessageFor(model => model.Beer_Description, "", new { @class = "help is-danger" })
+                                </div>
+                            </div>
+
+                            <div class="field">
+                                <label class="label">Beer Rating</label>
+                                <div class="control">
+                                    @Html.EditorFor(model => model.Beer_Rating, new { htmlAttributes = new { @class = "input" } })
+                                    @Html.ValidationMessageFor(model => model.Beer_Rating, "", new { @class = "help is-danger" })
+                                </div>
+                            </div>
+
+                            <div class="field">
+                                <label class="label">Image Name</label>
+                                <div class="control">
+                                    @Html.EditorFor(model => model.ImageName, new { htmlAttributes = new { @class = "input" } })
+                                    @Html.ValidationMessageFor(model => model.ImageName, "", new { @class = "help is-danger" })
+                                </div>
+                            </div>
+
+                            <div class="field">
+                                <label class="label">Brewery</label>
+                                <div class="field has-addons has-addons-left">
+                                    <div class="control is-expanded">
+                                        <div class="select is-fullwidth">
+                                            @Html.DropDownList("Brewery_ID", null, htmlAttributes: new { @class = "form-control" })
+                                            @Html.ValidationMessageFor(model => model.Brewery_ID, "", new { @class = "help is-danger" })
+                                        </div>
+                                    </div>
+                                    <div class="control">
+                                        <a class="is-static button">Choose</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="field is-grouped is-grouped-centered">
+                                <p class="control">
+                                    <input type="submit" value="Save" class="button is-link" />
+                                </p>
+
+                            </div>
+
+
+                        </div>
+                    }
+
+                    <!-- END EDIT FORM -->
+
+                </div>
+            </div>
+        </div>
+
+    </div>
 </div>
