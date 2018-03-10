@@ -5,71 +5,52 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Details</h2>
 
-<div>
-    <h4>Brewery</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Brewery_Name)
-        </dt>
+<section class="hero is-dark">
+    <div class="hero-body">
+        <div class="container">
+            <h1 class="title name-font brand">
+                @Html.DisplayFor(model => model.Brewery_Name) Details
+            </h1>
+        </div>
+    </div>
+</section>
 
-        <dd>
-            @Html.DisplayFor(model => model.Brewery_Name)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Brewery_Description)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Brewery_Description)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Brewery_Address)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Brewery_Address)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Brewery_City)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Brewery_City)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Brewery_State)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Brewery_State)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Brewery_Zip)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Brewery_Zip)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Brewery_Rating)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Brewery_Rating)
-        </dd>
-
-    </dl>
+<div class="container">
+    <nav class="breadcrumb" aria-label="breadcrumbs">
+        <ul>
+            <li>@Html.ActionLink("Back to List", "Index")</li>
+            <li class="is-active"><a href="#" aria-current="page">Details</a></li>
+        </ul>
+    </nav>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Brewery_ID }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+
+<div class="columns is-centered">
+    <div class="column is-4">
+        <div class="card">
+            <header class="card-header">
+                <p class="card-header-title">
+                    @Html.DisplayFor(model => model.Brewery_Name)
+                </p>
+            </header>
+            <div class="card-content">
+                <div class="content">
+                    <div class="title is-4">Rating: <span class="rating">@Html.DisplayFor(model => model.Brewery_Rating)</span></div>
+                </div>
+                <div class="content">
+                    <div class="title is-4">Description:</div>
+                    @Html.DisplayFor(model => model.Brewery_Description)
+                </div>
+                <div class="content">
+                    <div class="title is-4">Location:</div>
+                    @Html.DisplayFor(model => model.Brewery_Address)
+
+                    @Html.DisplayFor(model => model.Brewery_City), @Html.DisplayFor(model => model.Brewery_State) @Html.DisplayFor(model => model.Brewery_Zip)
+                </div>
+            </div>
+            <footer class="card-footer">
+                @Html.ActionLink("Edit", "Edit", new { id = Model.Brewery_ID }, new { @class = "card-footer-item" })
+            </footer>
+        </div>
+    </div>
+</div>

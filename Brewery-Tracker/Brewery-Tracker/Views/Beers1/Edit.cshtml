@@ -30,7 +30,7 @@
         <div class="card top-bot-space">
             <header class="card-header">
                 <p class="card-header-title">
-                    Enter Beer Information
+                    Update Beer Information
                 </p>
             </header>
             <div class="card-content">
@@ -44,7 +44,7 @@
                     {
                         @Html.AntiForgeryToken()
 
-                        <div class="form-horizontal">
+                        <div>
                             @Html.ValidationSummary(true, "", new { @class = "help is-danger" })
                             @Html.HiddenFor(model => model.Beer_ID)
 
