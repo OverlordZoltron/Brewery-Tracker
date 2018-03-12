@@ -42,3 +42,7 @@
 .beer-of-the-day {
     margin: 1rem 0 1rem 0;
 }
+
+span.rating {
+    background: hsl(217, 71%, 53%);  
+}

@@ -21,65 +21,44 @@
 
 <section class="hero">
     <div class="hero-body">
-        @Html.ActionLink("Create New", "Create", new object { }, new { @class = "button is-link" })
+        <div class="has-text-centered">
+            @Html.ActionLink("Create New", "Create", new object { }, new { @class = "button is-link" })
+        </div>
     </div>
 </section>
 
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Brewery_Name)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Brewery_Description)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Brewery_Address)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Brewery_City)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Brewery_State)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Brewery_Zip)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Brewery_Rating)
-        </th>
-        <th></th>
-    </tr>
-
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Brewery_Name)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Brewery_Description)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Brewery_Address)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Brewery_City)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Brewery_State)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Brewery_Zip)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Brewery_Rating)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Brewery_ID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Brewery_ID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Brewery_ID })
-        </td>
-    </tr>
-}
-
-</table>
+<div class="columns is-centered">
+    <div class="column is-4">
+        @foreach (var item in Model)
+        {
+            <div class="card">
+                <header class="card-header">
+                    <p class="card-header-title">
+                        @Html.DisplayFor(modelItem => item.Brewery_Name)
+                    </p>
+                </header>
+                <div class="card-content">
+                    <div class="content">
+                        <div class="title is-4">Rating: <span class="rating">@Html.DisplayFor(modelItem => item.Brewery_Rating)</span></div>
+                    </div>
+                    <div class="content">
+                        <div class="title is-4">Description:</div>
+                        @Html.DisplayFor(modelItem => item.Brewery_Description)
+                    </div>
+                    <div class="content">
+                        <div class="title is-4">Location:</div>
+                        @Html.DisplayFor(modelItem => item.Brewery_Address)
+               
+                        @Html.DisplayFor(modelItem => item.Brewery_City), @Html.DisplayFor(modelItem => item.Brewery_State) @Html.DisplayFor(modelItem => item.Brewery_Zip)
+                    </div>
+                </div>
+                <footer class="card-footer">
+                    @Html.ActionLink("Edit", "Edit", new { id = item.Brewery_ID }, new { @class = "card-footer-item" })
+                    @Html.ActionLink("Details", "Details", new { id = item.Brewery_ID }, new { @class = "card-footer-item" })
+                    @Html.ActionLink("Delete", "Delete", new { id = item.Brewery_ID }, new { @class = "card-footer-item" })
+                </footer>
+            </div>
+        }
+       
+    </div>
+</div>

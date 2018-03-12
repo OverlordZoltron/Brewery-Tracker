@@ -5,55 +5,51 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Details</h2>
+<section class="hero is-dark">
+    <div class="hero-body">
+        <div class="container">
+            <h1 class="title name-font brand">
+                @Html.DisplayFor(model => model.Beer_Name) Details
+            </h1>
+        </div>
+    </div>
+</section>
 
-<div>
-    <h4>Beers</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Brewery.Brewery_Name)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Brewery.Brewery_Name)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Beer_Name)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Beer_Name)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Beer_Description)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Beer_Description)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Beer_Rating)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Beer_Rating)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.ImageName)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.ImageName)
-        </dd>
-
-    </dl>
+<div class="container">
+    <nav class="breadcrumb" aria-label="breadcrumbs">
+        <ul>
+            <li>@Html.ActionLink("Back to List", "Index")</li>
+            <li class="is-active"><a href="#" aria-current="page">Details</a></li>
+        </ul>
+    </nav>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Beer_ID }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+
+
+
+
+<div class="columns is-centered">
+    <div class="column is-4">
+        <div class="card">
+            <header class="card-header">
+                <p class="card-header-title">
+                    @Html.DisplayFor(model => model.Beer_Name)
+                    </p>
+                </header>
+                <div class="card-content">
+                    <div class="content">
+                        <div class="title is-4">Rating: <span class="rating">@Html.DisplayFor(model => model.Beer_Rating)</span></div>
+                    </div>
+                    <div class="content">
+                        <div class="title is-4">Brewery: <span>@Html.DisplayFor(model => model.Brewery.Brewery_Name)</span></div>
+                    </div>
+                    <div class="content">
+                        <div class="title is-4">Description:</div>
+                        @Html.DisplayFor(model => model.Beer_Description)
+                    </div>
+                </div>
+                <footer class="card-footer">
+                    @Html.ActionLink("Edit", "Edit", new { id = Model.Beer_ID }, new { @class = "card-footer-item" })
+                </footer>
+            </div>
+        </div>
+    </div>

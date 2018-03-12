@@ -22,54 +22,47 @@
 
 <section class="hero">
     <div class="hero-body">
-        @Html.ActionLink("Create New", "Create", new object { }, new { @class = "button is-link" })
+        <div class="has-text-centered">
+            @Html.ActionLink("Create New", "Create", new object { }, new { @class = "button is-link" })
+        </div>
     </div>
 </section>
 
 
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Brewery.Brewery_Name)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Beer_Name)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Beer_Description)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Beer_Rating)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ImageName)
-        </th>
-        <th></th>
-    </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Brewery.Brewery_Name)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Beer_Name)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Beer_Description)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Beer_Rating)
-        </td>
-        <td>
-            <img src='@Url.Action("Picture", new { imageName = item.ImageName})' />
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Beer_ID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Beer_ID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Beer_ID })
-        </td>
-    </tr>
-}
 
-</table>
+<div class="columns is-centered">
+    <div class="column is-4">
+        @foreach (var item in Model)
+        {
+            <div class="card">
+                <header class="card-header">
+                    <p class="card-header-title">
+                        @Html.DisplayFor(modelItem => item.Beer_Name)
+                    </p>
+                </header>
+                <div class="card-content">
+                    <div class="content">
+                        <div class="title is-4">Rating: <span class="rating">@Html.DisplayFor(modelItem => item.Beer_Rating)</span></div>
+                    </div>
+                    <div class="content">
+                        <div class="title is-4">Brewery: <span>@Html.DisplayFor(modelItem => item.Brewery.Brewery_Name)</span></div>
+                    </div>
+                    <div class="content">
+                        <div class="title is-4">Description:</div>
+                        @Html.DisplayFor(modelItem => item.Beer_Description)
+                    </div>
+                    <div class="content">
+                        <img src='@Url.Action("Picture", new { imageName = item.ImageName})' />
+                    </div>
+                </div>
+                <footer class="card-footer">
+                    @Html.ActionLink("Edit", "Edit", new { id = item.Beer_ID }, new { @class = "card-footer-item" })
+                    @Html.ActionLink("Details", "Details", new { id = item.Beer_ID }, new { @class = "card-footer-item" })
+                    @Html.ActionLink("Delete", "Delete", new { id = item.Beer_ID }, new { @class = "card-footer-item" })
+                </footer>
+            </div>
+        }
+
+    </div>
+</div>
