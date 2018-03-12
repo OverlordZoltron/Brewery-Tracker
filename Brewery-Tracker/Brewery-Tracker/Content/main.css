@@ -44,5 +44,9 @@
 }
 
 span.rating {
-    background: hsl(217, 71%, 53%);  
+    color: hsl(217, 71%, 53%);  
+}
+
+.top-bot-space-small {
+       margin: 2rem 0 4rem 0;
 }
